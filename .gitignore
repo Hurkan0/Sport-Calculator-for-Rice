@@ -1,32 +1,52 @@
-# Prerequisites
-*.d
+#include <iostream> 
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+int main()
+{
+	float subardakRatio = 1.5;
+	double kasikyagRatio = 2.0;
+	double kackisiRatio = 2;
+	double pirinckaloriRatio = 628.0;
+	double siviyagkaloriRatio = 128.0;
 
-# Precompiled Headers
-*.gch
-*.pch
+	double bardakpirincMiktari, kisikiloMiktari, kactabakyedin, suMiktari, yagMiktari, kisiMiktari, alinankaloriMiktari, tabakbasinakaloriMiktari, tempoluyuruyusyakilankalori, nekadaryurumeli, tempoluyuzmeyakilankalori, nekadaryuzmeli, nekadarkosmali, nekadarbisikletsurmeli;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+	std::cout << "Kac su bardagi pirinc koydunuz?";
+	std::cin >> bardakpirincMiktari;
+	
+	std::cout << "Kilonuz?";
+	std::cin >> kisikiloMiktari;
 
-# Fortran module files
-*.mod
-*.smod
+	std::cout << "Yenilen tabak sayisi?";
+	std::cin >> kactabakyedin;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+	suMiktari = bardakpirincMiktari * subardakRatio;
+	yagMiktari = bardakpirincMiktari * kasikyagRatio;
+	kisiMiktari = bardakpirincMiktari * kackisiRatio;
+	alinankaloriMiktari = (bardakpirincMiktari * pirinckaloriRatio) + (yagMiktari * siviyagkaloriRatio);
+	tabakbasinakaloriMiktari = alinankaloriMiktari / kisiMiktari; 
+	tempoluyuruyusyakilankalori = (kisikiloMiktari * 4.5) / 60;
+	nekadaryurumeli = (tabakbasinakaloriMiktari / tempoluyuruyusyakilankalori) * kactabakyedin;
+	tempoluyuzmeyakilankalori = 10;
+	nekadaryuzmeli = (tabakbasinakaloriMiktari / 10) * kactabakyedin;
+	nekadarkosmali = (nekadaryurumeli / 3) * kactabakyedin;
+	nekadarbisikletsurmeli = (tabakbasinakaloriMiktari / 11.6) + kactabakyedin;
 
-# Executables
-*.exe
-*.out
-*.app
+	
+
+	
+
+	std::cout << "Kac su bardagi su eklemeniz gerekiyor: " << suMiktari << " br " << std::endl;
+	std::cout << "Kac kasik yag eklemeniz gerekiyor: " << yagMiktari << " ks " << std::endl;
+	std::cout << kisiMiktari << " kisilik pilav yaptiniz." << std::endl;
+	std::cout << "Toplam icerilen kalori:" << alinankaloriMiktari << " kcal " << std::endl;
+	std::cout << "Tabak basina kalori miktari:" << tabakbasinakaloriMiktari << " kcal " << std::endl;
+	std::cout << "1 tabak pilavi yakmak icin yurunmesi gereken dakika:" << nekadaryurumeli << " dk " << std::endl;
+	std::cout << "1 tabak pilavi yakmak icin yuzmeniz gereken dakika:" << nekadaryuzmeli << " dk " << std::endl; 
+	std::cout << "1 tabak pilavi yakmak icin kosmaniz gereken dakika:" << nekadarkosmali << " dk " << std::endl;
+	std::cout << "1 tabak pilavi yakmak icin bisiklet surmeniz gereken dakika:" << nekadarbisikletsurmeli << " dk " << std::endl; 
+
+	//if you say setprecision(hane sayisi) its write on screen ...,(hane sayisi kadar rakam)
+
+	return 0;
+
+}
